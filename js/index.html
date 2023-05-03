@@ -11,8 +11,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https: //fonts.googleapis.com/css2?family= família= Catamarã:wght@100;200;400;500;800;900 &Poppins :wght@400;500;600 & family= Rubik:ital,wght@0,300;0,400;0,500;0,800;0,900;1,400 & display=swap"
-      rel="stylesheet "
-    />
+      rel="stylesheet"/>
     <!--Font-Awesome-->
     <link
       rel="stylesheet"
@@ -28,38 +27,38 @@
       <div class="form">
         <h3>Confira o clima de uma cidade!!</h3>
         <div class="form-input-container">
-          <input type="text" id="city" placeholder="Digite o nome da cidade" />
+          <input type="text" placeholder="Digite o nome da cidade" id="city"/>
           <button id="search">
             <i class="fa-sharp fa-solid fa-magnifying-glass"></i>
           </button>
         </div>
       </div>
-      <div class="weather-data">
+      <div id="weather-data" class="hide">
         <h2>
-          <i class="fa-solid fa-location-crosshairs"></i><span>Campinas</span
+          <i class="fa-solid fa-location-crosshairs"></i><span id="find-city"></span
           ><img
-            src="https://flagsapi.com/BE/flat/64.png"
+            src=""
             alt="Country Flag"
             id="country"
           />
         </h2>
-        <p id="temperature"><span>30</span>&deg;C</p>
+        <p id="temperature"><span></span>&deg;C</p>
         <div id="description-container">
-          <p id="description">Sol</p>
+          <p id="description"></p>
           <img
-            src="http://openweathermap.org/img/wn/01d.png"
+            src=""
             alt="Condições do tempo"
             id="weather-icon"
           />
         </div>
         <div class="details-container">
-          <p id="umidity">
+          <p id="humidity">
             <i class="fa-solid fa-droplet"></i>
-            <span>40%</span>
+            <span></span>
           </p>
           <p id="wind">
             <i class="fa-solid fa-wind"></i>
-            <span>10km/h</span>
+            <span></span>
           </p>
         </div>
       </div>
