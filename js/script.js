@@ -16,19 +16,47 @@ const countryElement = document.querySelector("#country");
 const humidityElement = document.querySelector("#humidity span");
 const windElement = document.querySelector("#wind span");
 
-//Funções
+const error = document.querySelector('#error-message');
+const loading = document.querySelector("#loading")
+
+//loading
+
+const toggleLoading = () => {
+  loading.classList.toggle("hide");
+};
 
 const getWeatherData = async (city) => {
+  toggleLoading();
   const apiWeatherURL = `https://api.openweathermap.org/data/2.5/weather?q=${city}&units=metric&appid=${key}&lang=pt_br`;
 
   const res = await fetch(apiWeatherURL);
   const data = await res.json();
 
+  toggleLoading();
+
   return data;
 };
 
+//Tratando o erro
+
+const errorMessage = () => {
+  error.classList.remove("hide");
+};
+
+const hideInformation = () => {
+  error.classList.add("hide");
+  weatherElement.classList.add("hide");
+}
+
 const showWeatherData = async (city) => {
+  hideInformation();
+
   const data = await getWeatherData(city);
+
+  if(data.cod === "404") {
+    errorMessage();
+    return;
+  }
 
   cityElement.innerText = data.name;
   temperature.innerText = parseInt(data.main.temp);
@@ -53,13 +81,14 @@ searchBtn.addEventListener("click", (e) => {
 
   const city = cityInput.value;
 
+
   showWeatherData(city);
 });
 
 cityInput.addEventListener("keyup", (e) => {
   if (e.code === "Enter") {
     const city = e.target.value;
-
+  
     showWeatherData(city);
   }
 });

@@ -30,6 +30,8 @@ body {
 /* Form */
 .form h3 {
   margin-bottom: 1rem;
+  text-align: center;
+  font-size: 30px;
 }
 
 .form-input-container {
@@ -55,11 +57,11 @@ body {
   transition: 0.5s;
 }
 .form button:hover{
-  background-color: rgb(243, 191, 3);
+  background-color: #17d4ee;
 }
 
 /* Clima */
-#weather-data {
+#weather-data, #loading, #error-message {
   border-top: 1px solid #fff;
   margin-top: 1.5rem;
   padding-top: 1.5rem;
@@ -108,3 +110,15 @@ body {
     margin: 0.6rem;
     padding: 0.6rem;
 }
+/* Animação de loading */
+
+#loading i {
+  animation: rotate 1.5s linear infinite;
+}
+
+@keyframes rotate {
+  to{
+    transform: rotate(360deg);
+  }
+}
+
